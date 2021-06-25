@@ -1,10 +1,19 @@
 import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import About from "./components/About";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello, I'm Tim Flood</h1>
-    </div>
+    <Router>
+      <Nav />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+      </Switch>
+    </Router>
   );
 }
 
